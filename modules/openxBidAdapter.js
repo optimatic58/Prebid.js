@@ -96,13 +96,13 @@ function createBidResponses(adUnits, {bids, startTime}) {
     if (adUnit.deal_id) {
       bidResponse.dealId = adUnit.deal_id;
     }
-    // default 5 mins 
+    // default 5 mins
     bidResponse.ttl = 300;
-    // true is net, false is gross 
+    // true is net, false is gross
     bidResponse.netRevenue = true;
     bidResponse.currency = adUnit.currency;
 
-    // additional fields to add 
+    // additional fields to add
     if (adUnit.tbd) {
       bidResponse.tbd = adUnit.tbd;
     }
@@ -211,7 +211,7 @@ function formatCustomParms(customKey, customParams) {
     // if value is an array, join them with commas first
     value = value.join(',');
   }
-  // return customKey=customValue format, escaping + to . and / to _ 
+  // return customKey=customValue format, escaping + to . and / to _
   return (customKey.toLowerCase() + '=' + value.toLowerCase()).replace('+', '.').replace('/', '_')
 }
 
